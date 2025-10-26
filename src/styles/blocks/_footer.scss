@@ -1,0 +1,46 @@
+@use '../helpers' as *;
+
+.footer  {
+  &__inner {
+    background-color: var(--background-shade);
+  }
+
+  &__soc1als {
+  }
+
+  &__list {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    column-gap: rem(30);
+    padding-block: rem(18);
+  }
+  &__link {
+    color: var(--grey);
+
+    @include hover {
+      color: var(--green-hover);
+    }
+
+    &:active {
+      color: var(--green-activeclick);
+    }
+
+    &:focus-visible {
+      outline: rem(1) solid var(--green-focus);
+      outline-offset: rem(1);
+    }
+  }
+
+  &__copyright {
+    padding-block: rem(3);
+    background-color: var(--background);
+
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--grey);
+    }
+  }
+}

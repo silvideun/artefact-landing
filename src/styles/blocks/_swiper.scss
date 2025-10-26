@@ -1,0 +1,14 @@
+@use '../helpers' as *;
+
+.swiper-slide {
+  width: rem(255);
+}
+
+.swiper-wrapper {
+  padding-right: rem(1);
+  transition-timing-function: ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primary-green);
+}

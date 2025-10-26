@@ -1,0 +1,48 @@
+@use  'helpers' as *;
+
+
+html {
+  scroll-behavior: smooth;
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+
+body {
+  @include fluid-text(16, 14);
+
+  font-family: var(--font-family);
+  line-height: 150%;
+  background-color: var(--background);
+}
+
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+h1 {
+  @include fluid-text(60, 48);
+  font-weight: 700;
+  line-height: 100%;
+  font-family: var(--second-family);
+  color: var(--white);
+}
+
+h2 {
+  @include fluid-text(24);
+
+  font-family: var(--second-family);
+  font-weight: 700;
+  line-height: 150%;
+  color: var(--white);
+}
+
+p {
+  color: var(--white);
+}

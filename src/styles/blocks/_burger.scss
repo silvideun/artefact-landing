@@ -1,0 +1,41 @@
+@use '../helpers' as *;
+
+.burger {
+  @include square(32px);
+
+  position: relative;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: rem(6);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &.is-active {
+    .burger__line {
+      &:nth-child(1) {
+        transform: translateY(5px) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+      }
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: rem(2);
+    background-color: var(--white);
+    border-radius: rem(1);
+    transition: all 0.3s ease;
+
+  }
+}

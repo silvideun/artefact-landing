@@ -1,0 +1,86 @@
+@use '../helpers' as *;
+
+.card {
+  width: 100%;
+  min-height: rem(493);
+  border: rem(1) solid var(--background-shade);
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+
+
+
+
+  &__top {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: rem(180);
+    padding: rem(30) rem(18);
+    background-color: var(--background-shade);
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      width: 24px;
+      height: 24px;
+      border: rem(1) solid var(--grey);
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      font-family: var(--second-family);
+      font-size: rem(16);
+      border-radius: 50%;
+      color: var(--grey);
+    }
+
+    &.card-1:before {
+      content: '2.4';
+    }
+
+    &.card-2:before {
+      content: '3.1';
+    }
+
+    &.card-3:before {
+      content: '1.2';
+    }
+
+    &.card-4:before {
+      content: '1.4';
+    }
+  }
+
+  &__body {
+    padding-block: rem(16) rem(24);
+    padding-inline: rem(16);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; // Позволяет телу карточки занять все доступное пространство
+  }
+
+  &__title {
+    margin-bottom: rem(8);
+  }
+
+  &__subtitle {
+    margin-bottom: rem(16);
+    font-weight: 400;
+    color: var(--grey);
+  }
+
+  &__link {
+    display: inline-flex;
+    align-self: start;
+    border: rem(1) solid var(--primary-green);
+    margin-top: auto;
+
+    @include hover {
+      color: var(--background-shade);
+      background-color: var(--primary-green);
+    }
+  }
+}

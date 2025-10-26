@@ -1,0 +1,67 @@
+@use '../helpers' as *;
+
+.hero {
+  position: relative;
+  background-image: image-set(
+                  url("/src/images/bg1.avif") 1x,
+                  url("/src/images/bg1.webp") 2x
+  );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+
+  @include mobile-s {
+    background-position: 15%;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 47, 48, 0.6);
+    z-index: -1;
+  }
+  &__inner {
+    padding-block: fluid(115,30);
+  }
+
+  &__title {
+    margin-bottom: rem(16);
+    max-width: rem(680)
+  }
+
+  &__subtitle {
+    margin-bottom: rem(24);
+    max-width: rem(630);
+
+    @include mobile-s {
+      display: none;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    column-gap: rem(8);
+    color: var(--primary-green);
+    font-size: rem(16);
+    font-weight: 700;
+
+    @include hover {
+      color: var(--green-hover);
+    }
+
+    &:active {
+      color: var(--green-activeclick);
+    }
+
+    &:focus-visible {
+      outline: rem(1) solid var(--green-focus);
+    }
+  }
+
+}

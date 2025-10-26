@@ -1,0 +1,96 @@
+@use '../helpers' as *;
+
+.helpers {
+  background-image: image-set(
+                  url("/src/images/bg2.avif") 1x,
+                  url("/src/images/bg2.webp") 2x
+  );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: rem(463);
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 47, 48, 0.6);
+    z-index: -1;
+  }
+  &__inner {
+    padding-block: rem(60);
+  }
+
+  &__title {
+    font-family: var(--second-family);
+    font-style: italic;
+    font-weight: 700;
+    font-size: rem(48);
+    line-height: 100%;
+    color: var(--white);
+  }
+  &__subtitle {
+    margin-top: rem(16);
+    margin-bottom: rem(24);
+    font-weight: 400;
+  }
+
+  &__form {
+    display: grid;
+    max-width: rem(350);
+    row-gap: rem(24);
+
+    &-error {
+      color: var(--red);
+      margin-bottom: rem(6);
+      display: block;
+    }
+  }
+
+  &__form-field {
+    input {
+
+      border: none;
+      width: 100%;
+      padding-block: rem(11);
+      padding-left: rem(16);
+      cursor: pointer;
+      font-weight: 600;
+
+
+      &::placeholder {
+        color: var(--grey);
+      }
+
+      &:not(:placeholder-shown) {
+        background-color: var(--grey);
+      }
+
+
+      &:focus {
+        outline: rem(3) solid  var(--green-focus);
+      }
+    }
+  }
+
+  &__form-field input.is-invalid {
+    outline: rem(3) solid  var(--red);
+  }
+  
+  &__button {
+    justify-self: start;
+    border: none;
+    font-weight: 700;
+    color: var(--background-shade);
+    background-color: var(--primary-green);
+
+    @include hover {
+      background-color: var(--green-hover);
+    }
+  }
+}
